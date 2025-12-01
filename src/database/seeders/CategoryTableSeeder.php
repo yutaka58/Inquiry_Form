@@ -14,7 +14,9 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $params = [
+        DB::table('categories')->truncate();
+        
+        $categories = [
             ['content' => '商品のお届けについて'],
             ['content' => '商品の交換について'],
             ['content' => '商品トラブル'],
@@ -22,6 +24,6 @@ class CategoryTableSeeder extends Seeder
             ['content' => 'その他'],
         ];
 
-        DB::table('categories')->insert($params);
+        DB::table('categories')->insert($categories);
     }
 }
